@@ -1,0 +1,12 @@
+<div class="form-generator">
+  <h1>Анкета</h1>
+  <form #testForm="ngForm" (ngSubmit)="submitForm()">
+    <div *ngFor="let element of formElements">
+      <app-test-input *ngIf="element.type === 'input'" [element]="element" [value]="testFormModel[element.id]" (valueChange)="onValueChange(element.id, $event)" (addField)="addField(element.id)" (removeField)="removeField(element.id)"></app-test-input>
+      <app-test-select *ngIf="element.type === 'select'" [element]="element" [value]="testFormModel[element.id]" (valueChange)="onValueChange(element.id, $event)"></app-test-select>
+      <app-test-number *ngIf="element.type === 'number'" [element]="element" [value]="testFormModel[element.id]" (valueChange)="onValueChange(element.id, $event)"></app-test-number>
+      <app-test-checkbox *ngIf="element.type === 'checkbox'" [element]="element" (valueChange)="onValueChange(element.id, $event)"></app-test-checkbox>
+    </div>
+    <button type="submit">Отправить</button>
+  </form>
+</div>

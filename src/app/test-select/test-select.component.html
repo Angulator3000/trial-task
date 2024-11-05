@@ -1,0 +1,6 @@
+<div class="form-group">
+  <label [for]="element.id">{{ element.label }}</label>
+  <select [id]="element.id" [ngModel]="value" (ngModelChange)="onValueChange($event)" [required]="element.required">
+    <option *ngFor="let choice of element.choices" [value]="choice.value" [selected]="choice.selected">{{ choice.label }}</option>
+  </select>
+</div>

@@ -1,0 +1,7 @@
+<div class="form-group">
+  <label [for]="element.id">{{ element.label }}</label>
+  <div *ngFor="let choice of element.choices">
+    <input type="checkbox" [id]="choice.id" [ngModel]="choice.selected" (ngModelChange)="onValueChange(choice)" [required]="element.required">
+    <label [for]="choice.id" [ngClass]="{'selected': choice.selected}">{{ choice.label }}</label>
+  </div>
+</div>

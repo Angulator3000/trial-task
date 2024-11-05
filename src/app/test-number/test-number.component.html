@@ -1,0 +1,4 @@
+<div class="form-group">
+  <label [for]="element.id">{{ element.label }}</label>
+  <input type="number" [id]="element.id" [ngModel]="value" (ngModelChange)="onValueChange($event)" [required]="element.required">
+</div>

@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label [for]="element.id">{{ element.label }}</label>
+  <div class="input-group">
+    <input type="text" [id]="element.id" [ngModel]="value" (ngModelChange)="onValueChange($event)" [required]="element.required" [placeholder]="element.description">
+    <button type="button" (click)="onAddField()" *ngIf="element.addField">Добавить еще</button>
+    <button type="button" (click)="onRemoveField()" *ngIf="element.removeField">Удалить</button>
+  </div>
+</div>
